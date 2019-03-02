@@ -1,0 +1,3 @@
+To import the users data, enter on the command line the following code:
+
+mongo usersAPI < usersJson.js

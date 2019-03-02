@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Slider Value</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="sliderValue">
+            <mat-form-field>
+                <input matInput placeholder="Slider Value" [value]="sliderValue" [disabled]="true">
+            </mat-form-field>
+          </div>
+          <div class="slider">
+            <mat-slider (input)="sliderValue = $event.value" [value]="sliderValue"></mat-slider>
+          </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="Submit()" [routerLink]="['/users']">Submit</button>
+        <button mat-raised-button [routerLink]="['/users']">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+  
