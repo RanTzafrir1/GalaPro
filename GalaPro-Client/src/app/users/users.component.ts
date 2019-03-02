@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/services/data.service';
 import { IUser } from '../shared/interfaces/user.model';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users',
@@ -13,7 +14,7 @@ export class UsersComponent implements OnInit {
   counter: number = 1;
   displayedColumns: string[] = ['First Name', 'Last Name', 'Slider Value', 'Edit'];
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     (this.dataService.dataLoaded) ? 
@@ -32,5 +33,6 @@ export class UsersComponent implements OnInit {
     this.dataService.setUsersData(this.dataService.getAllUsersFromLocalStorage()).subscribe(user => {
       console.log(user);
     });
+    this.toastr.success("Data Sync'd");
   }
 }

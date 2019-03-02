@@ -16,9 +16,11 @@
     </ng-container>
 
     <ng-container matColumnDef="Edit">
-        <th mat-header-cell  *matHeaderCellDef > </th>
+        <th mat-header-cell  *matHeaderCellDef > 
+          <button mat-raised-button (click)="SyncData()">Sync</button>
+        </th>
             <td mat-cell *matCellDef="let element" >
-                    <button mat-raised-button (click)="routeToPage(element._id)">Edit</button>
+              <button mat-raised-button (click)="routeToPage(element._id)">Edit</button>
             </td>
     </ng-container>
   
